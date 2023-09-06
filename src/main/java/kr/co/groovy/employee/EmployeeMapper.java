@@ -13,7 +13,9 @@ import java.util.Map;
 public interface EmployeeMapper {
     EmployeeVO signIn(String emplId);
 
-    void initPassword(@Param("emplId")String emplId, @Param("emplPassword")String emplPassword);
+    void initMacAddr(@Param("emplMacadrs") String emplMacadrs, @Param("emplId") String emplId);
+
+    void initPassword(@Param("emplId") String emplId, @Param("emplPassword") String emplPassword);
 
     int countEmp();
 
@@ -30,14 +32,16 @@ public interface EmployeeMapper {
     EmployeeVO loadEmp(String emplId);
 
     void modifyProfile(@Param("emplId") String emplId, @Param("fileName") String fileName, @Param("originalFileName") String originalFileName);
-    void modifyPassword(@Param("emplId")String emplId, @Param("emplPassword")String emplPassword);
+
+    void modifyPassword(@Param("emplId") String emplId, @Param("emplPassword") String emplPassword);
+
     void modifySign(@Param("emplId") String emplId, @Param("fileName") String fileName, @Param("originalFileName") String originalFileName);
 
-    NotificationVO getNoticeAt (String emplId);
+    NotificationVO getNoticeAt(String emplId);
 
     void modifyEmp(EmployeeVO vo);
 
-    void modifyNoticeAt( Map<String, Object> map);
+    void modifyNoticeAt(Map<String, Object> map);
 
     void inputConectLog(ConnectionLogVO vo);
 }

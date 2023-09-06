@@ -26,7 +26,11 @@
         <result property="authCode" column="AUTH_CODE"/>
         <result property="authEmpId" column="AUTH_EMP_ID"/>
     </resultMap>
-
+    <update id="initMacAddr" parameterType="String">
+        UPDATE EMPL
+        SET EMPL_MACADRS = #{emplMacadrs}
+        WHERE EMPL_ID = #{emplId}
+    </update>
     <insert id="inputConectLog" parameterType="connectionLogVO">
         INSERT INTO CONECT_LOG(EMPL_ID,
                                CONECT_LOG_MACADRS,

@@ -20,7 +20,6 @@ import java.net.UnknownHostException;
 @Service
 public class CustomUserDetailsService implements UserDetailsService {
     private final EmployeeMapper mapper;
-    InetAddress ip;
 
     public CustomUserDetailsService(EmployeeMapper mapper) {
         this.mapper = mapper;

@@ -13,6 +13,12 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
+import java.net.InetAddress;
+import java.net.NetworkInterface;
+import java.net.SocketException;
+import java.net.UnknownHostException;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -42,6 +48,33 @@ public class EmployeeService {
     public void initPassword(String emplId, String emplPassword) {
         String encodePw = encoder.encode(emplPassword);
         mapper.initPassword(emplId, encodePw);
+
+        try {
+            InetAddress ip = InetAddress.getLocalHost();
+            if (ip != null) {
+                NetworkInterface network = NetworkInterface.getByInetAddress(ip);
+                byte[] mac = network.getHardwareAddress();
+                if (mac != null) {
+                    MessageDigest digest = MessageDigest.getInstance("SHA-256");
+                    String macAddress = "";
+                    for (int i = 0; i < mac.length; i++) {
+                        macAddress += (String.format("%02x", mac[i]) + ":");
+                    }
+                    byte[] encodedHash = digest.digest(macAddress.getBytes());
+                    StringBuilder hexString = new StringBuilder(2 * encodedHash.length);
+
+                    for (byte b : encodedHash) {
+                        hexString.append(String.format("%02x", b & 0xFF));
+                    }
+                    String emplMacadrs = hexString.toString();
+                    mapper.initMacAddr(emplMacadrs, emplId);
+                }
+            }
+        } catch (UnknownHostException | SocketException e) {
+            log.debug(e.getMessage());
+        } catch (NoSuchAlgorithmException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     public int countEmp() {
