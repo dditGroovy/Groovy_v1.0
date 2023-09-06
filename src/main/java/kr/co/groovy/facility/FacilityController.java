@@ -1,4 +1,4 @@
-package kr.co.groovy.vehicle;
+package kr.co.groovy.facility;
 
 import kr.co.groovy.vo.VehicleVO;
 import lombok.RequiredArgsConstructor;
@@ -15,7 +15,7 @@ import java.util.List;
 @RequestMapping("/facility")
 @RequiredArgsConstructor
 public class FacilityController {
-    private final VehicleService service;
+    private final FacilityService service;
 
     @GetMapping("/vehicle")
     public ModelAndView getVehicles(ModelAndView mav) {

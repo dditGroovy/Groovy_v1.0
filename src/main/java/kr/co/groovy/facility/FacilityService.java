@@ -1,4 +1,4 @@
-package kr.co.groovy.vehicle;
+package kr.co.groovy.facility;
 
 import kr.co.groovy.enums.Hipass;
 import kr.co.groovy.vo.VehicleVO;
@@ -11,7 +11,7 @@ import java.util.List;
 @Slf4j
 @Service
 @RequiredArgsConstructor
-public class VehicleService {
+public class FacilityService {
     private final FacilityMapper mapper;
 
     public List<VehicleVO> getVehicles() {

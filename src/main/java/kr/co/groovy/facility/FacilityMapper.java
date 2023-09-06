@@ -1,4 +1,4 @@
-package kr.co.groovy.vehicle;
+package kr.co.groovy.facility;
 
 import kr.co.groovy.vo.VehicleVO;
 import org.apache.ibatis.annotations.Mapper;
