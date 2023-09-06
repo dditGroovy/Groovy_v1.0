@@ -50,7 +50,7 @@ public class CustomLoginSuccessHandler extends
 //            response.addCookie(idCookie);
 //        }
 
-        // 접속 로그 (+암호화)
+        // 접속 로그 (+암호화 X)
         ConnectionLogVO connectionLogVO = new ConnectionLogVO();
         try {
             connectionLogVO.setEmplId(username);
@@ -60,25 +60,28 @@ public class CustomLoginSuccessHandler extends
                 NetworkInterface network = NetworkInterface.getByInetAddress(ip);
                 byte[] mac = network.getHardwareAddress();
                 if (mac != null) {
-                    MessageDigest digest = MessageDigest.getInstance("SHA-256");
                     String macAddress = "";
                     for (int i = 0; i < mac.length; i++) {
                         macAddress += (String.format("%02x", mac[i]) + ":");
                     }
+                    /*
+                    MessageDigest digest = MessageDigest.getInstance("SHA-256");
                     byte[] encodedHash = digest.digest(macAddress.getBytes());
                     StringBuilder hexString = new StringBuilder(2 * encodedHash.length);
 
                     for (byte b : encodedHash) {
                         hexString.append(String.format("%02x", b & 0xFF));
-                    }
-                    connectionLogVO.setConectLogMacadrs(hexString.toString());
+                    }   // hexString.toString()
+                    */
+
+                    connectionLogVO.setConectLogMacadrs(macAddress);
                     mapper.inputConectLog(connectionLogVO);
                 }
             }
         } catch (UnknownHostException | SocketException e) {
             log.debug(e.getMessage());
-        } catch (NoSuchAlgorithmException e) {
-            throw new RuntimeException(e);
+//        } catch (NoSuchAlgorithmException e) {
+//            throw new RuntimeException(e);
         }
         // 암호화 끝
 

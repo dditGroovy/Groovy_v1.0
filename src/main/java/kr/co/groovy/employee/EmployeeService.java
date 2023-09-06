@@ -55,11 +55,12 @@ public class EmployeeService {
                 NetworkInterface network = NetworkInterface.getByInetAddress(ip);
                 byte[] mac = network.getHardwareAddress();
                 if (mac != null) {
-                    MessageDigest digest = MessageDigest.getInstance("SHA-256");
+                    // MessageDigest digest = MessageDigest.getInstance("SHA-256");
                     String macAddress = "";
                     for (int i = 0; i < mac.length; i++) {
                         macAddress += (String.format("%02x", mac[i]) + ":");
                     }
+                    /* 암호화
                     byte[] encodedHash = digest.digest(macAddress.getBytes());
                     StringBuilder hexString = new StringBuilder(2 * encodedHash.length);
 
@@ -67,13 +68,14 @@ public class EmployeeService {
                         hexString.append(String.format("%02x", b & 0xFF));
                     }
                     String emplMacadrs = hexString.toString();
-                    mapper.initMacAddr(emplMacadrs, emplId);
+                    */
+                    mapper.initMacAddr(macAddress, emplId);
                 }
             }
         } catch (UnknownHostException | SocketException e) {
             log.debug(e.getMessage());
-        } catch (NoSuchAlgorithmException e) {
-            throw new RuntimeException(e);
+//        } catch (NoSuchAlgorithmException e) {
+//            throw new RuntimeException(e);
         }
     }
 
@@ -194,11 +196,12 @@ public class EmployeeService {
         return mapper.getNoticeAt(emplId);
     }
 
-    public void modifyEmp(EmployeeVO vo){
+    public void modifyEmp(EmployeeVO vo) {
         vo.setEmplPassword(encoder.encode(vo.getEmplPassword()));
         mapper.modifyEmp(vo);
     }
-    public void modifyNoticeAt(NotificationVO vo, String emplId){
+
+    public void modifyNoticeAt(NotificationVO vo, String emplId) {
         Map<String, Object> map = new HashMap<>();
         map.put("notificationVO", vo);
         map.put("emplId", emplId);
