@@ -1,21 +1,32 @@
 package kr.co.groovy.security;
 
+import kr.co.groovy.employee.EmployeeMapper;
+import kr.co.groovy.vo.ConnectionLogVO;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.web.authentication.SavedRequestAwareAuthenticationSuccessHandler;
 
 import javax.servlet.ServletException;
-import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.net.InetAddress;
+import java.net.NetworkInterface;
+import java.net.SocketException;
+import java.net.UnknownHostException;
 import java.util.ArrayList;
 import java.util.List;
 
 @Slf4j
 public class CustomLoginSuccessHandler extends
         SavedRequestAwareAuthenticationSuccessHandler {
+    private final EmployeeMapper mapper;
+    InetAddress ip;
+
+    public CustomLoginSuccessHandler(EmployeeMapper mapper) {
+        this.mapper = mapper;
+    }
 
     @Override
     public void onAuthenticationSuccess(HttpServletRequest request,
@@ -36,6 +47,33 @@ public class CustomLoginSuccessHandler extends
 //            idCookie.setPath("/");
 //            response.addCookie(idCookie);
 //        }
+
+
+        ConnectionLogVO connectionLogVO = new ConnectionLogVO();
+        try {
+            connectionLogVO.setEmplId(username);
+            log.info(username);
+            ip = InetAddress.getLocalHost();
+            log.info(ip + "");
+            if (ip != null) {
+                connectionLogVO.setConectLogIp(ip.getHostAddress());
+                NetworkInterface network = NetworkInterface.getByInetAddress(ip);
+                byte[] mac = network.getHardwareAddress();
+                if (mac != null) {
+                    log.info(mac + "");
+                    String macAddress = "";
+                    for (int i = 0; i < mac.length; i++) {
+                        macAddress += (String.format("%02x", mac[i]) + ":");
+                    }
+                    connectionLogVO.setConectLogMacadrs(macAddress);
+                    mapper.inputConectLog(connectionLogVO);
+                    log.info(connectionLogVO + "");
+                }
+            }
+        } catch (UnknownHostException | SocketException e) {
+            log.debug(e.getMessage());
+        }
+
 
         List<String> roleNames = new ArrayList<String>();
         auth.getAuthorities().forEach(authority -> {
