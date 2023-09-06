@@ -1,6 +1,9 @@
 package kr.co.groovy.facility;
 
+import kr.co.groovy.enums.Facility;
+import kr.co.groovy.enums.Fixtures;
 import kr.co.groovy.enums.Hipass;
+import kr.co.groovy.vo.FacilityVO;
 import kr.co.groovy.vo.VehicleVO;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -37,4 +40,5 @@ public class FacilityService {
     public int deleteReservedByVhcleResveNo(int vhcleResveNo) {
         return mapper.deleteReservedByVhcleResveNo(vhcleResveNo);
     }
+
 }

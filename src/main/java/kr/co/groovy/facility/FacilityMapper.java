@@ -1,5 +1,6 @@
 package kr.co.groovy.facility;
 
+import kr.co.groovy.vo.FacilityVO;
 import kr.co.groovy.vo.VehicleVO;
 import org.apache.ibatis.annotations.Mapper;
 
@@ -16,5 +17,6 @@ public interface FacilityMapper {
     public int inputVehicleReservation(VehicleVO vehicleVO);
 
     public int deleteReservedByVhcleResveNo(int vhcleResveNo);
+
 
 }

@@ -5,12 +5,12 @@
 <h1><a href="/facility/vehicle">차량 예약</a></h1>
 
 <!-- 반복 -->
-<c:forEach var="" items="" varStatus="">
+<c:forEach var="meetingRoom" items="${meetingRoomList}" varStatus="">
   <button type="button" onclick="setRoomNumber(this)">
     <i></i> <!-- 아이콘 -->
-    <h3 class="no">A101</h3> <!-- 회의실 번호 -->
+    <h3 class="no">${meetingRoom.commonCodeFcltyKind}</h3> <!-- 회의실 번호 -->
     <h4>인원</h4>
-    <p><span></span>명</p> <!-- 인원 -->
+    <p><span>${meetingRoom.fcltyPsncpa}</span>명</p> <!-- 인원 -->
     <h4>비품</h4>
     <!-- 비품 반복 -->
     <p>
