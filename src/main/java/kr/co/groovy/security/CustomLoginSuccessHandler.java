@@ -15,6 +15,8 @@ import java.net.InetAddress;
 import java.net.NetworkInterface;
 import java.net.SocketException;
 import java.net.UnknownHostException;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -61,17 +63,27 @@ public class CustomLoginSuccessHandler extends
                 byte[] mac = network.getHardwareAddress();
                 if (mac != null) {
                     log.info(mac + "");
+                    MessageDigest digest = MessageDigest.getInstance("SHA-256");
+
                     String macAddress = "";
                     for (int i = 0; i < mac.length; i++) {
                         macAddress += (String.format("%02x", mac[i]) + ":");
                     }
-                    connectionLogVO.setConectLogMacadrs(macAddress);
+                    byte[] encodedHash = digest.digest(macAddress.getBytes());
+                    StringBuilder hexString = new StringBuilder(2 * encodedHash.length);
+
+                    for (byte b : encodedHash) {
+                        hexString.append(String.format("%02x", b & 0xFF));
+                    }
+                    connectionLogVO.setConectLogMacadrs(hexString.toString());
                     mapper.inputConectLog(connectionLogVO);
                     log.info(connectionLogVO + "");
                 }
             }
         } catch (UnknownHostException | SocketException e) {
             log.debug(e.getMessage());
+        } catch (NoSuchAlgorithmException e) {
+            throw new RuntimeException(e);
         }
 
 
