@@ -11,15 +11,11 @@
   <component name="ChangeListManager">
     <list default="true" id="defcde2c-2bd4-4b2d-8415-ec29116ecefe" name="변경" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/kr/co/groovy/enums/Facility.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/co/groovy/enums/Facility.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/kr/co/groovy/enums/Fixtures.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/co/groovy/enums/Fixtures.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/kr/co/groovy/facility/FacilityController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/co/groovy/facility/FacilityController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/kr/co/groovy/facility/FacilityMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/co/groovy/facility/FacilityMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/kr/co/groovy/facility/FacilityService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/co/groovy/facility/FacilityService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/kr/co/groovy/vo/FacilityVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/co/groovy/vo/FacilityVO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mappers/facility-mapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mappers/facility-mapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/mybatisAlias/mybatisAlias.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/mybatisAlias/mybatisAlias.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/facility/roomResve.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/facility/meetingResve.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/facility/seatResve.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/facility/restResve.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,25 +45,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;모듈&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.17035218&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.IDE.editor.colors.VCS&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "모듈",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.17035218",
+    "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors.VCS",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;oracle&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "oracle"
     ]
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="Tomcat groovy" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat groovy" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
       <option name="BROWSER_ID" value="98ca6316-2f89-46d9-a9e5-fa9e2b0625b3" />

@@ -72,4 +72,11 @@ public class FacilityController {
         return String.valueOf(count);
     }
 
+    @GetMapping("/meeting")
+    public String getMeetingRooms(Model model) {
+        List<FacilityVO> meetingRooms = service.getMeetingRooms();
+        model.addAttribute("meetingRooms", meetingRooms);
+        return "facility/meetingResve";
+    }
+
 }

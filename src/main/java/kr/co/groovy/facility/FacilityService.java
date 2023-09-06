@@ -41,4 +41,12 @@ public class FacilityService {
         return mapper.deleteReservedByVhcleResveNo(vhcleResveNo);
     }
 
+    public List<FacilityVO> getMeetingRooms() {
+        List<FacilityVO> meetingRooms = mapper.getMeetingRooms();
+        for (FacilityVO meetingRoom : meetingRooms) {
+            meetingRoom.setCommonCodeFcltyKind(Facility.valueOf(meetingRoom.getCommonCodeFcltyKind()).getLabel());
+        }
+        return meetingRooms;
+    }
+
 }
