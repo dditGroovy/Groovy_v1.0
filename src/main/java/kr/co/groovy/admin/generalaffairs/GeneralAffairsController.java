@@ -1,4 +1,4 @@
-package kr.co.groovy.admin;
+package kr.co.groovy.admin.generalaffairs;
 
 import kr.co.groovy.common.CommonService;
 import kr.co.groovy.vo.NoticeVO;
@@ -8,23 +8,22 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
 
 @Slf4j
-@RequestMapping("/admin")
 @Controller
-public class AdminController {
+@RequestMapping("/generalAffairs")
+public class GeneralAffairsController {
     final
-    AdminService service;
+    GeneralAffairsService service;
 
     final
     CommonService commonService;
 
-    public AdminController(AdminService service, CommonService commonService) {
+    public GeneralAffairsController(GeneralAffairsService service, CommonService commonService) {
         this.service = service;
         this.commonService = commonService;
     }

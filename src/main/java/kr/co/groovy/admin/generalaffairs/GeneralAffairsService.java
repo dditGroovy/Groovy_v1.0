@@ -1,4 +1,4 @@
-package kr.co.groovy.admin;
+package kr.co.groovy.admin.generalaffairs;
 
 import kr.co.groovy.vo.NoticeVO;
 import lombok.extern.slf4j.Slf4j;
@@ -9,18 +9,17 @@ import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
-import java.util.Map;
 import java.util.UUID;
 
 @Slf4j
 @Service
-public class AdminService {
+public class GeneralAffairsService {
     final
-    AdminMapper mapper;
+    GeneralAffairsMapper mapper;
     final
     String uploadPath;
 
-    public AdminService(AdminMapper mapper, String uploadPath) {
+    public GeneralAffairsService(GeneralAffairsMapper mapper, String uploadPath) {
         this.mapper = mapper;
         this.uploadPath = uploadPath;
     }

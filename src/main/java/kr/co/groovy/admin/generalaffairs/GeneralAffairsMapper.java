@@ -1,13 +1,12 @@
-package kr.co.groovy.admin;
+package kr.co.groovy.admin.generalaffairs;
 
 import kr.co.groovy.vo.NoticeVO;
 import org.apache.ibatis.annotations.Mapper;
-import org.springframework.web.multipart.MultipartFile;
 
 import java.util.Map;
 
 @Mapper
-public interface AdminMapper {
+public interface GeneralAffairsMapper {
 
     void inputNotice(NoticeVO vo);
 

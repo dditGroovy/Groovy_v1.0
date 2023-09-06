@@ -33,6 +33,6 @@
 <script>
     const listBtn = document.querySelector("#listBtn");
     listBtn.addEventListener(()=>{
-        location.href="admin/manageNotice";
+        location.href="generalAffairs/manageNotice";
     })
 </script>
