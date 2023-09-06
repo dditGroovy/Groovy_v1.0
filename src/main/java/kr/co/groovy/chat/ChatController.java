@@ -46,8 +46,6 @@ public class ChatController {
     @PostMapping("/createRoom")
     @ResponseBody
     public void createRoom(@RequestBody List<EmployeeVO> roomMemList, Principal principal) {
-        log.info("{}", roomMemList);
-
         String hostEmplId = principal.getName();
         EmployeeVO hostEmpl = employeeService.loadEmp(hostEmplId);
 

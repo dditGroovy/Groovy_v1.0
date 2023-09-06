@@ -3,7 +3,7 @@
 
 <div>
     <a href="#"><p>내 휴가</p></a>
-    <a href="/employee/mySalary"><p>내 급여</p></a>
+    <a href="/employee/salary"><p>내 급여</p></a>
 </div>
 
 <div>
@@ -17,5 +17,14 @@
 </div>
 
 <div>
-    <!-- 테이블 넣어줄 자리 -->
+    <c:choose>
+        <c:when test="${empty vacationRecord}">
+            <p>(휴가 내역이 존재하지 않습니다)</p>
+        </c:when>
+        <c:otherwise>
+            <c:forEach items="${vacationRecord}" var="record">
+                <p>${record}</p>
+            </c:forEach>
+        </c:otherwise>
+    </c:choose>
 </div>

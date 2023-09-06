@@ -2,7 +2,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <div>
-    <a href="/employee/myVacation"><p>내 휴가</p></a>
+    <a href="/employee/vacation"><p>내 휴가</p></a>
     <a href="#"><p>내 급여</p></a>
 </div>
 
