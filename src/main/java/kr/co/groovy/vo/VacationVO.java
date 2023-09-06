@@ -8,4 +8,7 @@ import lombok.ToString;
 @Setter
 @ToString
 public class VacationVO {
+    private String yrycEmpId;
+    private int yrycUseCo;
+    private int yrycNowCo;
 }
