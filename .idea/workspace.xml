@@ -10,11 +10,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="defcde2c-2bd4-4b2d-8415-ec29116ecefe" name="변경" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/kr/co/groovy/facility/FacilityController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/co/groovy/facility/FacilityController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/kr/co/groovy/facility/FacilityMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/co/groovy/facility/FacilityMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/kr/co/groovy/facility/FacilityService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/co/groovy/facility/FacilityService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mappers/facility-mapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mappers/facility-mapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/mybatisAlias/mybatisAlias.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/mybatisAlias/mybatisAlias.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
